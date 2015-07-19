@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>Black Ops Mod Manager</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body ng-app="blackopsmodmanager" ng-controller="controller as ctrl">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<div ng-repeat="mod in ctrl.mods" class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{mod.name || mod.id}}</h3>
+					</div>
+					<div ng-show="mod.description || mod.compatibleMaps" class="panel-body">
+						<div ng-show="mod.description">
+							<strong>Features:</strong>
+							<br>
+							<span>{{mod.description}}</span>
+						</div>
+						<div ng-show="mod.compatibleMaps">
+							<strong>Compatible Maps:</strong>
+							<br>
+							<span>{{mod.compatibleMaps}}</span>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<button ng-click="mod.id === ctrl.installed.id ? ctrl.uninstall(mod) : ctrl.install(mod)" class="btn btn-block btn-{{mod.id === ctrl.installed.id ? 'danger' : 'primary'}}">{{mod.id === ctrl.installed.id ? 'Uninstall' : 'Install'}}</button>
+					</div>
+				</div>
+				<div class="well">
+					<h4>Drop mod folder here to import</h4>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

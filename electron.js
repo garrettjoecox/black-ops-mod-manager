@@ -22,10 +22,10 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 420, height: 680});
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/app.html');
 
   // Open the devtools.
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
