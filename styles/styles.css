@@ -1,0 +1,25 @@
+
+body {
+	padding-top: 15px;
+}
+
+.well>h4 {
+	text-align: center;
+	color: #888;
+}
+
+.fa {
+	margin-top: 2px;
+}
+
+.fa-edit {
+	cursor: pointer;
+}
+
+.modtitleform {
+	padding: 6px 12px;
+	font-size: 14px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-weight: normal;
+}
